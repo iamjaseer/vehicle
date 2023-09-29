@@ -1,20 +1,15 @@
 'use client'
-import Link from "next/link"
-import BottomNav from "@/component/BottomNav"
-import Brand from "@/component/Brand"
-import Button from "@/component/Button"
-import Card from "@/component/Card"
 import Header from "@/component/Header"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Swal from "sweetalert2"
-
+import { redirect } from 'next/navigation'
 
 function Profile() {
 
-  const router = useRouter();
+  const router = useRouter()
 
   const session = useSession();
   // console.log(session)
@@ -60,9 +55,6 @@ function Profile() {
   })
 
 
-   
-    // alert()
-    //router.push(`/add-vehicle?user=${authid}`)
   }
 
 
@@ -73,6 +65,11 @@ function Profile() {
       console.log(response.data);
       setUsers(response.data);
     });
+  }
+
+
+  if(session.status != "authenticated"){ 
+    redirect('/')
   }
 
 
@@ -182,7 +179,7 @@ function Profile() {
             </div>
             <div className="row">
               <div className="col-12">
-              {session.status === "authenticated" ? <button onClick={() => signOut("google")} className="btn btn-primary-outline btn-lg  w-100 rounded-pill mb-3">Logout</button> : router.push("/")}
+              {session.status === "authenticated" ? <button onClick={() => signOut("google")} className="btn btn-primary-outline btn-lg  w-100 rounded-pill mb-3">Logout</button> :  null }
               </div>
             </div>
           </div>
