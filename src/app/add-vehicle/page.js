@@ -132,7 +132,7 @@ function EditProfile() {
                         />
                     </div>
                     <div className="form-group mb-3">
-                      <input required type="text" name="" className="form-control" placeholder="Title" onChange={e => setTitle(e.target.value)} required />
+                      <input required type="text" name="" className="form-control" placeholder="Title" onChange={e => setTitle(e.target.value)} />
                     </div>
                     <div className="form-group mb-3">
                       <input required type="text" name="" className="form-control" placeholder="Regsiter Number" onChange={e => setRegNumber(e.target.value)} />
@@ -206,7 +206,7 @@ function EditProfile() {
                       <input required type="number" name="" className="form-control" placeholder="Kilometer" onChange={e => setKm(e.target.value)} />
                     </div>
                     <div className="form-group mb-3">
-                      <input  required type="number" name="" className="form-control" placeholder="Price" onChange={e => setPrice(e.target.value)} required />
+                      <input  required type="number" name="" className="form-control" placeholder="Price" onChange={e => setPrice(e.target.value)}  />
                     </div>
                     <div className="form-group mb-3">
                       <input required type="number" name="" className="form-control" placeholder="Last price" onChange={e => setLastPrice(e.target.value)} />

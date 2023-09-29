@@ -131,18 +131,18 @@ function VehicleInfo() {
                                     controls={false}
                                     indicators={false}
                                 >
-                                    {vehicle.map((item) => item.photo.split(',')[0] == null ? null :
-                                        <Carousel.Item>
+                                    {vehicle.map((item, k) => item.photo.split(',')[0] == null ? null :
+                                        <Carousel.Item key={k}>
                                             <img src={`https://iamjaseer.in/usedvehicle/uploads/${vehicle.map((item) => decodeURI(item.photo.split(',')[0]))}`} className="w-100 d-block" alt="" />
                                         </Carousel.Item>
                                     )}
-                                    {vehicle.map((item) => item.photo.split(',')[1] == null ? null :
-                                        <Carousel.Item>
+                                    {vehicle.map((item, k) => item.photo.split(',')[1] == null ? null :
+                                        <Carousel.Item  key={k}>
                                             <img src={`https://iamjaseer.in/usedvehicle/uploads/${vehicle.map((item) => decodeURI(item.photo.split(',')[1]))}`} className="w-100 d-block" alt="" />
                                         </Carousel.Item>
                                     )}
-                                    {vehicle.map((item) => item.photo.split(',')[2] == null ? null :
-                                        <Carousel.Item>
+                                    {vehicle.map((item, k) => item.photo.split(',')[2] == null ? null :
+                                        <Carousel.Item key={k}> 
                                             <img src={`https://iamjaseer.in/usedvehicle/uploads/${vehicle.map((item) => decodeURI(item.photo.split(',')[2]))}`} className="w-100 d-block" alt="" />
                                         </Carousel.Item>
                                     )}

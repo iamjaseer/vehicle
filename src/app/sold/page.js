@@ -63,6 +63,7 @@ function Sold() {
                                 <div className="card-wrpr">
                                       {vehicles.map((item, k) => 
                                     <Card
+                                    key={k}
                                         link="/vehicle-info"
                                         price={item.price}
                                         title={item.title}
